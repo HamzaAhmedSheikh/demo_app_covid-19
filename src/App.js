@@ -10,7 +10,8 @@ import './App.css'
 class App extends Component {
 
   state = {
-    data: {}
+    data: {},
+    country: ''
   }
 
  async componentDidMount() {
@@ -21,6 +22,10 @@ class App extends Component {
      
   }
 
+  handleCountryChange = async (country) => {
+      console.log(country);
+      
+  }
   
 
  render() {
@@ -28,9 +33,9 @@ class App extends Component {
    const { data } = this.state
   return (
     <div className="container">
-      <Cards data={data} />
-      <Chart />
+      <Cards data={data} />      
       <CountryPicker />
+      <Chart />
     </div>
   );
  }
